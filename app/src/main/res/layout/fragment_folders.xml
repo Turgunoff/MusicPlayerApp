@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    tools:context=".UI.Controllers.FragmentFolders">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ReciycleViewFolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="56dp"
+        android:scrollbarDefaultDelayBeforeFade="400" />
+
+</FrameLayout>

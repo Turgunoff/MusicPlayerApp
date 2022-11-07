@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UI.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2f3e46">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#202125"
+            app:tabGravity="center"
+            app:tabIndicatorColor="#00BA79"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorGravity="bottom"
+            app:tabIndicatorHeight="4dp"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="#03FBA4"
+            app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:tabTextColor="#C5C5C5">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Device" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Online" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Album" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/favourite_selected" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageViewBackNavar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/back_navar_music"
+            app:cornerRadius="50dp"
+            app:roundedCorners="all" />
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/blurBack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/navarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/back_navar_l"
+            android:foregroundTint="#00FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/RecyclerViewTrack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <ImageView
+                android:id="@+id/imageViewNextN"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="1dp"
+                android:padding="1dp"
+                android:src="@drawable/ic_round_next"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewPlayN"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageViewPlayN" />
+
+            <ImageView
+                android:id="@+id/imageViewPlayN"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:layout_marginEnd="1dp"
+                android:src="@drawable/ic_round_play"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewPreviewN"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewNextN"
+                app:layout_constraintTop_toTopOf="@+id/imageViewPreviewN" />
+
+            <ImageView
+                android:id="@+id/imageViewPreviewN"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:layout_marginEnd="2dp"
+                android:padding="1dp"
+                android:src="@drawable/ic_round_previous"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewPlayN"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/coverNavar"
+                android:layout_width="49dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="12dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/coverrrl"
+                app:cornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:roundedCorners="all" />
+
+            <TextView
+                android:id="@+id/textViewTitleN"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="1dp"
+                android:ellipsize="marquee"
+                android:ems="10"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollbars="vertical"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="title"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorWhite"
+                android:textColorHighlight="#121212"
+                android:textSize="19sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewArtistN"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewPreviewN"
+                app:layout_constraintStart_toEndOf="@+id/coverNavar"
+                tools:text="title" />
+
+            <TextView
+                android:id="@+id/textViewArtistN"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="7dp"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollbars="vertical"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="artist"
+                android:textAlignment="viewStart"
+                android:textColor="#DAD8D8"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewPreviewN"
+                app:layout_constraintStart_toStartOf="@+id/textViewTitleN"
+                tools:text="artist" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

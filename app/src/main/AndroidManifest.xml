@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- play for exit -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".UI.MainActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".UI.SearchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SearchLayout" />
+        <activity
+            android:name=".UI.PlayActivity"
+            android:theme="@style/PlayLayout" />
+        <activity
+            android:name=".UI.FolderActivity"
+            android:theme="@style/FolderLayout" />
+        <activity
+            android:name=".UI.AlbumActivity"
+            android:theme="@style/AlbumLayout" />
+
+        <receiver
+            android:name=".Widget.MusicWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/music_widget_info" />
+        </receiver>
+
+        <activity
+            android:name=".UI.AboutActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AboutLayout" />
+        <activity
+            android:name=".UI.SplashScreenActivity"
+            android:exported="true"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <service android:name=".Services.MediaPlayerService" />
+    </application>
+
+</manifest>
